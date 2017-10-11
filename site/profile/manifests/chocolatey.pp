@@ -4,8 +4,4 @@ class profile::chocolatey {
   package { 'chocolatey':
     ensure      =>  'latest',
   }
-
-  package {'git':
-    ensure => 'latest',
-  }
 }
