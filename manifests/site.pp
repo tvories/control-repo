@@ -30,3 +30,8 @@ node default {
   # Example:
   #   class { 'my_class': }
 }
+
+# Set chocolatey as the default windows provider
+if $::kernel == 'windows' {
+  Package { provider => chocolatey, }
+}
