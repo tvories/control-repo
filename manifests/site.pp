@@ -26,9 +26,14 @@ File { backup => false }
 # specified in the console for that node.
 
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
+  if $trusted['extensions']['pp_role'] {
+    include "role::${trusted['extensions']['pp_role']}"
+    $role = $trusted['extensions']['pp_role']
+  } elsif $facts['role'] {
+    include "role::${facts['role']}"
+  } else {
+    # noop
+  }
 }
 
 # Set chocolatey as the default windows provider
