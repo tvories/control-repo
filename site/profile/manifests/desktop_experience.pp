@@ -7,14 +7,14 @@ class profile::desktop_experience (
     ensure => present,
     path   => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowFileExt',
   }
-  registry_value { 'Version':
+  registry_value { 'VersionShowFileExt':
     ensure  => present,
     path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowFileExt\Version',
     type    => string,
     data    => '1,0,0',
     require => Registry_key['ShowFileExt'],
   }
-  registry_value { 'StubPath':
+  registry_value { 'StubPathShowFileExt':
     ensure  => present,
     path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowFileExt\StubPath',
     type    => string,
@@ -27,14 +27,14 @@ class profile::desktop_experience (
     ensure => present,
     path   => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowHiddenFolders',
   }
-  registry_value { 'Version':
+  registry_value { 'VersionShowHiddenFolders':
     ensure  => present,
     path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowHiddenFolders\Version',
     type    => string,
     data    => '1,0,0',
     require => Registry_key['ShowHiddenFolders'],
   }
-  registry_value { 'StubPath':
+  registry_value { 'StubPathShowHiddenFolders':
     ensure  => present,
     path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowHiddenFolders\StubPath',
     type    => string,
