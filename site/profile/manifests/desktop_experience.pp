@@ -2,22 +2,43 @@
 class profile::desktop_experience (
 ) {
 
-  registry_key { 'Advanced':
+# Set file extensions to show
+  registry_key { 'ShowFileExt':
     ensure => present,
-    path   => 'HKU\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
+    path   => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowFileExt',
   }
-  registry_value { 'HideFileExt':
+  registry_value { 'Version':
     ensure  => present,
-    path    => 'HKU\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\HideFileExt',
+    path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowFileExt\Version',
     type    => string,
-    data    => '0',
-    require => Registry_key['Advanced'],
+    data    => '1,0,0',
+    require => Registry_key['ShowFileExt'],
   }
-  registry_value { 'Hidden':
+  registry_value { 'StubPath':
     ensure  => present,
-    path    => 'HKU\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Hidden',
+    path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowFileExt\StubPath',
     type    => string,
-    data    => '1',
-    require => Registry_key['Advanced'],
+    data    => 'reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f',
+    require => Registry_key['ShowFileExt'],
+  }
+
+# Set hidden folders and files to show
+  registry_key { 'ShowHiddenFolders':
+    ensure => present,
+    path   => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowHiddenFolders',
+  }
+  registry_value { 'Version':
+    ensure  => present,
+    path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowHiddenFolders\Version',
+    type    => string,
+    data    => '1,0,0',
+    require => Registry_key['ShowHiddenFolders'],
+  }
+  registry_value { 'StubPath':
+    ensure  => present,
+    path    => 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ShowHiddenFolders\StubPath',
+    type    => string,
+    data    => 'reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hidden /t REG_DWORD /d 1 /f',
+    require => Registry_key['ShowHiddenFolders'],
   }
 }
