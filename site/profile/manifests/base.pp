@@ -1,4 +1,4 @@
-class profile::base::base {
+class profile::base {
   include profile::chocolatey
   include profile::base::desktop_experience
 
