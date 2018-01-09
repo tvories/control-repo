@@ -1,5 +1,5 @@
 # == Class: profile::desktop_experience
-class profile::desktop_experience (
+class profile::base::desktop_experience (
 ) {
 
 # Set file extensions to show
