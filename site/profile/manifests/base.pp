@@ -5,7 +5,4 @@ class profile::base {
   package { '7zip':
     ensure      =>  'latest',
   }
-
-  # Local users
-  
 }
