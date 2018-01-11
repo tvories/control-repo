@@ -29,3 +29,13 @@ mod 'puppet-download_file', '2.1.0'
 mod 'puppetlabs-wsus_client', '1.0.3'
 mod 'trlinkin-domain_membership', '1.1.2'
 mod 'puppet-hiera', '3.3.0'
+
+
+# Modules from github
+mod 'firewallprofile_win',
+  :git    => 'https://github.com/joeypiccola/firewallprofile_win',
+  :branch => 'master' 
+
+  mod 'showhidden',
+  :git    => 'https://github.com/tvories/puppet_win_showhidden',
+  :branch => 'master' 
