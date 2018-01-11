@@ -1,3 +1,5 @@
+# == Class: profile::chocolatey
+
 class profile::chocolatey {
   include chocolatey
 

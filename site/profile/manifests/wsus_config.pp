@@ -1,3 +1,5 @@
+# == Class: profile::wsus_config
+
 class profile::wsus_config (
   $server_url
 ) {

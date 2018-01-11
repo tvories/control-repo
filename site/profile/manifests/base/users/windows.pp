@@ -2,7 +2,7 @@
 
 class profile::base::users::windows (
 ){
-   user { 'tadmin':
+  user { 'tadmin':
     ensure   => present,
   }
 }
