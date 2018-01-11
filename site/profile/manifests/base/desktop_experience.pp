@@ -1,4 +1,4 @@
-# == Class: profile::desktop_experience
+# == Class: profile::base::desktop_experience
 class profile::base::desktop_experience (
 ) {
   class { 'firewallprofile_win':
