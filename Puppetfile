@@ -32,10 +32,6 @@ mod 'puppet-hiera', '3.3.0'
 
 
 # Modules from github
-mod 'firewallprofile_win',
-  :git    => 'https://github.com/joeypiccola/firewallprofile_win',
-  :branch => 'master' 
-
   mod 'showhidden',
   :git    => 'https://github.com/tvories/puppet_win_showhidden',
   :branch => 'master' 
