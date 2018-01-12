@@ -29,9 +29,4 @@ mod 'puppet-download_file', '2.1.0'
 mod 'puppetlabs-wsus_client', '1.0.3'
 mod 'trlinkin-domain_membership', '1.1.2'
 mod 'puppet-hiera', '3.3.0'
-
-
-# Modules from github
-  mod 'showhidden_win',
-  :git    => 'https://github.com/tvories/showhidden_win',
-  :branch => 'master' 
+mod 'tvories-showhidden_win', '0.1.0'
