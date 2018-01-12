@@ -32,6 +32,6 @@ mod 'puppet-hiera', '3.3.0'
 
 
 # Modules from github
-  mod 'showhidden',
-  :git    => 'https://github.com/tvories/puppet_win_showhidden',
+  mod 'showhidden_win',
+  :git    => 'https://github.com/tvories/showhidden_win',
   :branch => 'master' 
