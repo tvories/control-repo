@@ -1,3 +1,13 @@
 ---
 
-profile::kms::key_management_service_name: 'docker1'
+profile::kms::key_management_service_name: 'kms'
+test1: >
+    ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEBBQAEggEAjPGXdcRqXp/gjcCuoWjvAfPB2AjkeLUlYIhs
+    6xBi6kBAndg1c1NfNLa79d22f9ooeF6hPHTI7zx4DrxYP3ioSDW3F4mE0Oij
+    ytKscW3SVM0ITnVbUCOhgJiouVxmA/e0hTySKHEG+IUqfIgTgR5z6Ecpk/h+
+    SoiPwILxLfud0S6/Kprxu91qeFiUrUusXaRBByQkswnEChhi2jinoiiLd+Mm
+    A2AxmfX1Lg5AFDyUajv5GjC+k5fbxv0WavScIxT16n+xWY7l5OT8tYfPi2He
+    nm36IpL4vQG4kMJ4dKv1f19XRXuKw5jnz+j0zzj40fcJ8v9ty3ct7l5yqZHb
+    nShprDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBDS8tyb2AA7OXClpE9j
+    H6/PgBAPWOCw3xYYLFg3V0JwlHwJ]
