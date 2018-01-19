@@ -35,5 +35,5 @@ mod 'puppetlabs-puppetserver_gem', '1.0.0'
 
 # Git Modules
 mod 'get_local_administrators_win',
-    :git    => 'https://github.com/tvories/local_administrators_win'
+    :git    => 'https://github.com/tvories/local_administrators_win',
     :branch => 'master'
