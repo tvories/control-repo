@@ -32,3 +32,8 @@ mod 'puppet-hiera', '3.3.1'
 mod 'tvories-showhidden_win', '0.1.0'
 mod 'puppetlabs-inifile', '1.6.0'
 mod 'puppetlabs-puppetserver_gem', '1.0.0'
+
+# Git Modules
+mod 'get_local_administrators_win',
+    :git    => 'https://github.com/tvories/local_administrators_win'
+    :branch => 'master'
