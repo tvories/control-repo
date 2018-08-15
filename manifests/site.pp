@@ -25,6 +25,12 @@ File { backup => false }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+# Set chocolatey as the default windows provider
+if $::kernel == 'windows' {
+  Package { provider => chocolatey, }
+
+}
+
 node default {
   if $trusted['extensions']['pp_role'] {
     include "role::${trusted['extensions']['pp_role']}"
@@ -34,9 +40,4 @@ node default {
   } else {
     # noop
   }
-}
-
-# Set chocolatey as the default windows provider
-if $::kernel == 'windows' {
-  Package { provider => chocolatey, }
 }
