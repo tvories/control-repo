@@ -38,6 +38,6 @@ node default {
   } elsif $facts['role'] {
     include "role::${facts['role']}"
   } else {
-    # noop
+    include profile::puppet_agent
   }
 }
