@@ -3,6 +3,10 @@ def BRANCH = EVENT_BRANCH.split('/')[1]
 
 pipeline {
 	agent any
+    environment {
+        pushover_key = credentials('pushover_user_key')
+        pushover_token = credentials('pushover_api_token')
+    }
     options {
         timeout(time: 1, unit: 'HOURS')
     }
@@ -146,19 +150,19 @@ pipeline {
        success {
                powershell '''
                     Write-Host "success"
-                   #.\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_tok -branch $env:EVENT_BRANCH -status 'succeeded' -build_id $env:build_id
+                   .\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_token -branch $env:EVENT_BRANCH -status 'succeeded' -build_id $env:build_id
                '''
        }
        aborted {
                powershell '''
                     Write-Host "aborted"
-                   #.\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_tok -branch $env:EVENT_BRANCH -status 'aborted' -build_id $env:build_id
+                   .\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_token -branch $env:EVENT_BRANCH -status 'aborted' -build_id $env:build_id
                '''
        }
        failure {
                powershell '''
                     Write-Host "failure"
-                   #.\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_tok -branch $env:EVENT_BRANCH -status 'failed' -build_id $env:build_id
+                   .\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_token -branch $env:EVENT_BRANCH -status 'failed' -build_id $env:build_id
                '''
        }
     }
