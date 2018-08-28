@@ -1,26 +1,43 @@
 ---
 version: 5
 
-defaults:  
+defaults:
   datadir: hieradata
-  data_hash: yaml_data
+  lookup_key: eyaml_lookup_key
+  options:
+    pkcs7_private_key: /etc/puppetlabs/puppet/keys/private_key.pkcs7.pem
+    pkcs7_public_key:  /etc/puppetlabs/puppet/keys/public_key.pkcs7.pem
 
 hierarchy:
-  - name: "Secrets"
-    lookup_key: eyaml_lookup_key
-    options:
-      pkcs7_private_key: /etc/puppetlabs/puppet/keys/private_key.pkcs7.pem
-      pkcs7_public_key:  /etc/puppetlabs/puppet/keys/public_key.pkcs7.pem
-    paths:
-      - nodes/%{trusted.certname}.yaml
-      - datacenters/%{facts.datacenter}.yaml
-      - common.yaml
-
   - name: "Per-node data"
     path: "nodes/%{trusted.certname}.yaml"
 
-  - name: "Per-datacenter defaults"
-    path: "datacenters/%{facts.datacenter}.yaml" 
+  - name: "Project Data"
+    paths:
+      # project/ewp/ewp_sitecore_app/production/content_mgmt.yaml
+      # - "project/%{project}/%{application}/%{application_environment}/%{application_component}.yaml"
+      # project/ewp/ewp_sitecore_app/production.yaml
+      - "project/%{project}/%{application}/%{application_environment}.yaml"
+      # project/ewp/ewp_sitecore_app/ewp_sitecore_app.yaml
+      - "project/%{project}/%{application}/%{application}.yaml"
+      # project/ewp/ewp_sitecore_app/DEFAULT/production.yaml
+      - "project/%{project}/DEFAULT/%{application_environment}.yaml"
+      # project/ewp/ewp.yaml
+      - "project/%{project}/%{project}.yaml"
+
+  - name: "Team data"
+    # team/netsys.yaml
+    mapped_paths: [teams, team, "team/%{team}/%{team}.yaml"]
+
+  - name: "Datacenter"
+    path: "datacenter/%{datacenter}.yaml"
+
+  - name: "Operating System"
+    paths:
+      - "os/%{facts.os.name}-%{facts.os.release.major}.yaml"
+      - "os/%{facts.os.name}.yaml"
+      - "osfamily/%{osfamily}-%{facts.os.release.major}.yaml"
+      - "osfamily/%{osfamily}.yaml"
 
   - name: "Common data"
     path: "common.yaml"
