@@ -149,19 +149,16 @@ pipeline {
     post {
        success {
                powershell '''
-                    Write-Host "success"
                    .\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_token -branch $env:EVENT_BRANCH -status 'succeeded' -build_id $env:build_id
                '''
        }
        aborted {
                powershell '''
-                    Write-Host "aborted"
                    .\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_token -branch $env:EVENT_BRANCH -status 'aborted' -build_id $env:build_id
                '''
        }
        failure {
                powershell '''
-                    Write-Host "failure"
                    .\\build\\Send-Pushover.ps1 -user $env:pushover_key -token $env:pushover_token -branch $env:EVENT_BRANCH -status 'failed' -build_id $env:build_id
                '''
        }
