@@ -1,3 +1,4 @@
+# == Class: role::base
 class role::base {
   include profile::base
   case $facts['os']['family'] {
@@ -11,3 +12,4 @@ class role::base {
       include profile::base
     }
   }
+}
