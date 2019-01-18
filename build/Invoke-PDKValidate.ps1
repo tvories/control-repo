@@ -8,5 +8,5 @@ Param(
 $ErrorActionPreference = 'Stop'
 $InformationPreference = 'Continue'
 
-Import-Module -Name 'PuppetDevelopmentKit'
+Import-Module -Name 'C:\Program Files\WindowsPowerShell\Modules\PuppetDevelopmentKit'
 pdk validate $test
