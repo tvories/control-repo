@@ -14,8 +14,6 @@ hierarchy:
 
   - name: "Project Data"
     paths:
-      # project/ewp/ewp_sitecore_app/production/content_mgmt.yaml
-      # - "project/%{project}/%{application}/%{application_environment}/%{application_component}.yaml"
       # project/ewp/ewp_sitecore_app/production.yaml
       - "project/%{project}/%{application}/%{application_environment}.yaml"
       # project/ewp/ewp_sitecore_app/ewp_sitecore_app.yaml
@@ -25,9 +23,25 @@ hierarchy:
       # project/ewp/ewp.yaml
       - "project/%{project}/%{project}.yaml"
 
+  - name: "Role specific team data"
+    # role/isg/jumphost.yaml
+    mapped_paths: [teams, team, "role/%{team}/%{role}.yaml"]
+
+  - name: "Domain specific team data"
+    # team/isg/davita.corp-isg.yaml
+    mapped_paths: [teams, team, "team/%{team}/%{win_domain}-%{team}.yaml"]
+
   - name: "Team data"
-    # team/netsys.yaml
+    # team/isg/isg.yaml
     mapped_paths: [teams, team, "team/%{team}/%{team}.yaml"]
+
+  - name: "Role data"
+    # role/jumphost.yaml
+    path: "role/%{role}.yaml"
+
+  - name: "Domain data"
+    # domain/davita.corp.yaml
+    path: "domain/%{win_domain}.yaml"
 
   - name: "Datacenter"
     path: "datacenter/%{datacenter}.yaml"
