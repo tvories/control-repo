@@ -85,18 +85,18 @@ pipeline {
                 }
             }
         }
-        stage('yaml tests') {
-            failFast false
-            parallel {
-                stage('parse') {
-                    steps {
-                        powershell '''
-                            .\\build\\Invoke-YAMLParse.ps1
-                        '''
-                    }
-                }
-            }
-        }
+        // stage('yaml tests') {
+        //     failFast false
+        //     parallel {
+        //         stage('parse') {
+        //             steps {
+        //                 powershell '''
+        //                     .\\build\\Invoke-YAMLParse.ps1
+        //                 '''
+        //             }
+        //         }
+        //     }
+        // }
         stage('deploy') {
             steps{
                 script {
