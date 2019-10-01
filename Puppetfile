@@ -31,7 +31,7 @@ mod 'trlinkin-domain_membership', '1.1.2'
 mod 'puppet-hiera', '3.4.1'
 mod 'tvories-showhidden_win', '0.1.0'
 mod 'puppetlabs-inifile', '3.1.0'
-mod 'puppetlabs-puppetserver_gem', '1.1.0'
+mod 'puppetlabs-puppetserver_gem', '1.1.1'
 
 # Git Modules
 mod 'get_local_administrators_win',
