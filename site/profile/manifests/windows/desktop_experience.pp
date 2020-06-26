@@ -1,5 +1,5 @@
-# == Class: profile::base::desktop_experience
-class profile::base::desktop_experience (
+# == Class: profile::windows::base::desktop_experience
+class profile::windows::desktop_experience (
 ) {
   class { 'showhidden_win':
     show_file_ext_version       => '1,0,2',

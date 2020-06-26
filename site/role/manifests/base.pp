@@ -8,8 +8,8 @@ class role::base {
     'windows': {
       include profile::windows::base
     }
-    default: {
-      include profile::base
-    }
+    # default: {
+    #   include profile::base
+    # }
   }
 }

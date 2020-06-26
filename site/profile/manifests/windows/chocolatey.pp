@@ -1,6 +1,6 @@
-# == Class: profile::chocolatey
+# == Class: profile::windows::chocolatey
 
-class profile::chocolatey {
+class profile::windows::chocolatey {
   include chocolatey
 
   package { 'chocolatey':

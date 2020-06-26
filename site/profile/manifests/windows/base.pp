@@ -2,7 +2,7 @@
 
 class profile::windows::base {
   include profile::windows::chocolatey
-  include profile::windows::base::desktop_experience
+  include profile::windows::desktop_experience
 
   package { '7zip':
     ensure      =>  'latest',
