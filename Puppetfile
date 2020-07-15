@@ -33,6 +33,7 @@ mod 'puppet-hiera', '4.0.0'
 mod 'tvories-showhidden_win', '0.1.0'
 mod 'puppetlabs-inifile', '4.2.0'
 mod 'puppetlabs-puppetserver_gem', '1.1.1'
+mod 'jpi-sigred_win', '0.1.0'
 
 # Git Modules
 mod 'get_local_administrators_win',
